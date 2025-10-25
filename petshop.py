@@ -5,92 +5,114 @@
 
 
 
-#---------Menu (USUARIO)-----------
-#1- Cadastro
-#2- Login
-#0- Sair
 
-# 1 - (Cadastro (Usuario))
-#Nome do usuario:
-#Email:
-#Senha:
-#senha nao pode ter menos de 4 digitos
-#.lower()
-#tem q ter (@) (gmail) e (.com)
-#email nao pode ser igual a um email ja cadastrado
+#Descrição da estrutura:
+##---------MENU (USUARIO)-----------
+
+# 1 - Cadastro (Usuário)
+# 2 - Login (Usuário)
+# 0 - Sair
 
 
+# -------------------------------
+# 1 - CADASTRO (USUÁRIO)
+# -------------------------------
+# 1 - Nome do usuário:
+# 2 - Email:
+#       - deve conter (@), (gmail) e (.com)
+#       - não pode ser igual a um email já cadastrado
+# 3 - Senha:
+#       - não pode ter menos de 4 dígitos
+# 4 - Todas as entradas devem ser tratadas com ".lower()"
+# --------------------------------
 
-#(Tela inicial(Usuario))
-#1- Buscar Produto
-#           Lista de Produtos
-#           1- Caldo de cana                      x1   R$10,00
-#           2- Bola de futebol americano          x9   R$0,05
-#           3- Alicate de unha                    x384   R$156,00
+
+# -------------------------------
+# 2 - LOGIN (USUÁRIO)
+# -------------------------------
+# 1 - Inserir nome de usuário:
+# 2 - Inserir senha:
+# 3 - Verificação do usuário:
+#       - Deve corresponder a um usuário existente da lista
+# --------------------------------
+
+
+# -------------------------------
+# --- TELA INICIAL (USUÁRIO) ---
+# -------------------------------
+# 1 - Buscar Produtos
+# 2 - Agendar Serviços
+# 0 - Sair
+# --------------------------------
+
+
+# 1 - BUSCAR PRODUTOS
+# --------------------------------
+# Exibir lista de produtos disponíveis:
+#       1 - Caldo de cana                      x1   R$10,00
+#       2 - Bola de futebol americano          x9   R$0,05
+#       3 - Alicate de unha                    x384   R$156,00
 #
-#           Selecionar produto: x
-#           0- Voltar
+# Selecionar produto: [número]
+#       0 - Voltar
 #
-#                  Digite a quantidade: 1
-#                          Confirmar: Sim
-#                                 se "não"
-#                                                 Selecionar produto: x ...
-#                                                 0- Voltar
-#                          1- Caldo de cana                                x0   R$10,00
-#                          2- Bola de futebol americano                    x9   R$0,05
-#                          3- Alicate de unha                              x384   R$156,00
-#           Quer fazer uma lista:
-#                    whlle
-#                           qual item dejesa adicionar a lista: 1 32 3 7 68
-#                           voltar
-#                                  adicionar outro item :
-#                                   terminar lista
-
-
-#                                                                       2 - Login
-#                                                                               U / S
-#                                                                               colcoar o usuario correspondente a da lista.
+# Após selecionar:
+#       - Digitar a quantidade desejada
+#       - Confirmar compra: [Sim / Não]
+#             -> Se "Sim": produto adicionado à lista
+#             -> Se "Não": volta para seleção de produto
 #
-#                                                                               1 - AGENDAR SERVIÇOS
-#                                                                                     1-tosa (explicca o serviço)
-#                                                                                     2-banho
-#                                                                                     3-exame
-#                                                                                     4-adoçao (explicca o processo)
-#                                                                               2 - COMPRAR PRODUTOS
-#                                                                                    ----------- PRODUTOS ------------
-#                                                                                       1 - BLA BLA BLA
-#                                                                                       2 - chevrolet corsa
-#                                                                                       3 - Toyota Hilux
+# Exemplo após compra:
+#       1 - Caldo de cana                      x0   R$10,00
+#       2 - Bola de futebol americano          x9   R$0,05
+#       3 - Alicate de unha                    x384   R$156,00
 #
-#                                                                                       Selecione o(s) produto(s): 2 3
-#                                                                                            menu .extend
-#                                                                                            se haver simbolos (: ; , .), desconsiderar
+# Criar lista personalizada:
+#       - while:
+#             -> "Qual item deseja adicionar à lista:" (ex: 1 32 3 7 68)
+#             -> "Deseja adicionar outro item?" (sim/não)
+#             -> "Finalizar lista" (encerra loop)
+# --------------------------------
+
+
+# 2 - AGENDAR SERVIÇOS
+# --------------------------------
+# (Acessível após login)
+# 1 - Tosa       (explicar o serviço)
+# 2 - Banho      (explicar o serviço)
+# 3 - Exame      (explicar o processo)
+# 4 - Adoção     (explicar o processo)
+# --------------------------------
+
+
+# 3 - COMPRAR PRODUTOS (dentro do menu logado)
+# --------------------------------
+# ----------- PRODUTOS DISPONÍVEIS ------------
+# 1 - BLA BLA BLA
+# 2 - Chevrolet Corsa
+# 3 - Toyota Hilux
 #
-#                                                                                                       Ao selecionar, exibir a mensagem: "Confirmar?"
-#                                                                                                             ao confirmar (SIM): print da lista dos pedidos que selecionou e preço dos produtos e valor total
+# Selecionar produto(s): [ex: 2 3]
+#       - Aceitar apenas números
+#       - Se houver símbolos (: ; , .), desconsiderar
 #
-#                                                                                                       (NÃO):
-#                                                                                                       1 - BLA BLA BLA
-#                                                                                                      2 - chevrolet corsa
-#                                                                                                     3 - Toyota Hilux
+# Confirmar compra? [Sim / Não]
+#       -> Se "Sim":
+#             - Exibir lista dos produtos selecionados
+#             - Mostrar preço individual e valor total
+#       -> Se "Não":
+#             - Voltar à lista de produtos
 #
-#                                                                                                      Selecione o(s) produto(s):
-#                                                                                                                            ".pop"
-#                                                                                                        (ALGO ALEATORIO) ex:1223 ou aslsajdas
-#                                                                                                          "comando desconhecido"
-#                                                                                                              exibir a mensagem: "Confirm
-#
-#                                                                                                               DEVOLUÇAO (OPICIONAL)
-#                                                                                                               ADM RESOLVE
+# Caso entrada inválida (ex: 1223, aslsajdas, etc):
+#       -> Exibir: "Comando desconhecido"
+# --------------------------------
 
 
-
-
-
-
-
-
-
+# 4 - DEVOLUÇÃO (Opcional)
+# --------------------------------
+# O usuario pode solicitar devolução
+# O administrador é responsável por resolver
+# --------------------------------
 
 
 
