@@ -1,33 +1,51 @@
-conta = [['marcus','1234'],['vyttor','2121'],['thiago','2112']]
-email = [['calanggjogos@gmail.com'],['muitolegal@gmail.com'],['euamominhaex@email.com']]
+contas = [['marcus','1234','muitolegal@gmail.com'],['vyttor','2121','calanggjogos@gmail.com'],['thiago','2112','euamominhaex@email.com']]
+qtde=0
 
 print('----SELECIONE UMA DAS OPÇÕES DE LOGIN----')
 print('[1] LOGIN')
 print('[2] CADASTRO')
 print('[3] SAIR')
+
 op = int(input('selecione uma das opções acima: '))
 
 
 if op == 1:
-    while nome or senha in senha:
-        nome = input('coloque seu nome de usuario')
-        senha = input('coloque sua senha')
-        if nome in conta and senha in conta:
-           print('logado com sucesso')
+    nome = input('digite seu nome: ')
+    senha = input('digite sua senha: ')
+    email_user = input('digite seu email: ')
+    if '@'and '.com' in email_user:
+        for conta in contas:
+            if nome == conta[0] and senha == conta[1] and email_user == conta[2]:
+                print('login feito com sucesso!')
+                break
+    if nome and senha and email_user not in contas:
+        while conta not in contas:
+            print('nome, senha ou email incompativeis, tente novamente: ')
+            nome = input('digite seu nome: ')
+            senha = input('digite sua senha: ')
+            email_user = input('digite seu email: ')
 
-qtde = 0
+
+
+        else :
+            print('login feito com sucesso!')
+
+
+
+
+
+
 if op == 2:
-    while qtde ==0:
-        nome = input('coloque seu nome de usuario')s
-        senha = input('coloque sua senha')
-        email = input('coloque seu email')
-        conta.extend([nome,senha])
-        if '@' in email:
-           if 'email' or "gmail"in email:
-               if ".com" in email:
-                   print('sucesso ao se cadastrar')
-                   qtde+=1
-
+    nome = input('digite seu nome: ')
+    senha = input('digite sua senha: ')
+    email_user = input('digite seu email: ')
+    if '@'and '.com' in email_user:
+        contas.extend(nome, senha, email_user)
+        print('cadastro feito com sucesso!')
 
     else:
-        print('ouve um problema com seu email, tente novamente')
+        nome = input('digite seu nome novamente: ')
+        senha = input('digite sua senha novamente: ')
+        email_user = input('digite seu email novamente: ')
+        contas.extend(nome, senha, email_user)
+        print('cadastro feito com sucesso!')
