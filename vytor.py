@@ -3,7 +3,7 @@
 #   Dupla: Pedro Vyttor, Marcus Vinicius (Periodo 1)
 #   Linguagem: Python
 
-usuarios = []
+usuarios = [['fulano','seufulano@gamil.com','12345']]
 produtos = [['Caldo de cana', 78, 10], ['Bola de futebol americano', 16, 20], ['Alicate de unha', 384, 15], ['PS5 Dogs Edition', 4, 14374], ['Racao pra Cachorro', 150, 34]]
 
 logado = False
@@ -18,13 +18,51 @@ while True:
 
     menu = input('Escolha uma opcao: ')
 
-    # Marcus Vinicius (APAGUE ESSES hashtags citando você (21 (esta), 24, 25, 26 e 27)), quando terminar sua parte)
+
+
+
+
+
+
+
+
+
     if menu == 'admin':
-        print('\n ===== MENU ADMINISTRATIVO =====')
-        # Agora é com você, major                                                                                                                Marcus Vinicius.
-        # O ADMIN deve modificar os usuarios (adicionar e remover), os produtos (preços e adicionar e remover produtos) e os serviços (definir preços, e também adicionar e remover serviços) Marcus Vinicius
-        # só pra ajudar enquanto escreve. Valeu e boas 'escrições' de codigos''.                                                                 Marcus Vinicius
-        # se estiver muito complicado pra organizar, pode reescrever algumas coisas do user pra se comunicar bem com sua parte                   Marcus Vinicius
+            while True:
+                print('\n ===== MENU ADMINISTRATIVO =====')
+                print('1 - remover usuarios: ')
+                print('2 - gerenciar produtos: ')
+                print('3 - gerenciar servicos: ')
+                print('0 - Sair\n ')
+
+                menu_admin = input('Escolha uma opcao: ')
+
+                if menu_admin == '1':
+                    print('1 - remover usuarios')
+                    print('2 - adicionar usuarios')
+                    print('0 - Sair\n ')
+
+                    selecao = input('Escolha uma opcao: ')
+
+                    if selecao == '1':
+                        login = input('Usuario a ser removido: ')
+                        for usuario in usuarios:
+                            if usuarios[0] == login:
+                                usuarios.remove(usuario)
+                                print('usuario removido com sucesso')
+                            else:
+                                print('usuario nao encontrado')
+
+
+
+
+
+
+
+
+
+
+
 
 
     if menu == '0':
@@ -109,7 +147,7 @@ while True:
 
                 if escolha_num >= 1 and escolha_num <= len(produtos):
                     qtd = int(input('Quantidade desejada: '))
-                    if qtd <= produtos[escolha_num - 1][1] and qtd > 0:
+                    if qtd <= produtos [escolha_num - 1][1] and qtd > 0:
                         total = qtd * produtos[escolha_num - 1][2]
                         print('Total: R$', total)
                         confirmar = input('Confirmar compra? (s/n): ').lower()

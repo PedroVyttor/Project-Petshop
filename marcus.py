@@ -64,9 +64,13 @@ while True:
 
              if selecao == '1':
                 remover = input('escolha um produto para remover: ')
-                while remover not in produtos:
+
+                if remover == produtos[i]:
+                    print('produto removido')
+
+                else:
                     print('produto nao encontrado')
-                    remover = input('escolha um produto novamente: ')
+                    produtos.pop(remover)
 
                 if remover in produtos:
                     produtos.remove(remover)
@@ -242,10 +246,3 @@ while True:
 
     else:
         print('Opcao invalida. Tente novamente.')
-
-
-
-
-
-
-
