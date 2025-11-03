@@ -52,7 +52,19 @@ while True:
                                 print('usuario removido com sucesso')
                             else:
                                 print('usuario nao encontrado')
+                                
+#produtos = [['Caldo de cana', 78, 10], ['Bola de futebol americano', 16, 20], ['Alicate de unha', 384, 15]]
 
+#print('\n--- LISTA DE PRODUTOS ---')
+#for p in produtos:
+#    print('-', p[0])
+
+#nome = input('\n Digite o nome do produto que deseja remover: ')
+
+#for p in produtos:
+#    if p[0].lower() == nome.lower():
+#         produtos.remove(p)
+#	break
 
 
 
