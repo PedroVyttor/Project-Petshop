@@ -1,173 +1,99 @@
-#       ---- Projeto Petshop ----
-#   Algoritmos e Lógica de Programação
-#   Dupla: Pedro Vyttor, Marcus Vinicius (Periodo 1)
-#   Linguagem: Python
+projeto Petshop (anotação)
+Algoritmos e Logica de Programação
+Dupla: Pedro Vyttor, Marcus Vinicius (Periodo 1)
+Linguagem: Python
+
+ESTRUTURA GERAL DO PROGRAMA
 
 
+MENU PRINCIPAL
+1 - Cadastro (Usuario)
+2 - Login (Usuario)
+0 - Sair
+admin - Acesso administrador
 
 
-#Descrição da estrutura:
-##---------MENU (USUARIO)-----------
-
-# 1 - Cadastro (Usuário)
-# 2 - Login (Usuário)
-# 0 - Sair
-
-
-# -------------------------------
-# 1 - CADASTRO (USUÁRIO)
-# -------------------------------
-# 1 - Nome do usuário:
-# 2 - Email:
-#       - deve conter (@), (gmail) e (.com)
-#       - não pode ser igual a um email já cadastrado
-# 3 - Senha:
-#       - não pode ter menos de 4 dígitos
-# 4 - Todas as entradas devem ser tratadas com ".lower()"
-# --------------------------------
+CADASTRO (USUARIO)
+- Usuario informa: nome, email e senha
+- Regras:
+    - Email deve conter "@", "gmail" e ".com"
+    - Senha precisa ter no minimo 4 digitos
+- Dados sao salvos na lista "usuarios"
+- Tudo em minusculo (.lower())
 
 
-# -------------------------------
-# 2 - LOGIN (USUÁRIO)
-# -------------------------------
-# 1 - Inserir nome de usuário:
-# 2 - Inserir senha:
-# 3 - Verificação do usuário:
-#       - Deve corresponder a um usuário existente da lista
-# --------------------------------
+LOGIN (USUARIO)
+- Usuario informa nome e senha
+- Sistema verifica se o nome e senha correspondem
+- Se correto: entra no menu do usuario
+- Se errado: mensagem "Usuario nao encontrado"
 
 
-# -------------------------------
-# --- TELA INICIAL (USUÁRIO) ---
-# -------------------------------
-# 1 - Buscar Produtos
-# 2 - Agendar Serviços
-# 0 - Sair
-# --------------------------------
+MENU USUARIO LOGADO
+1 - Buscar Produtos
+2 - Agendar Servicos
+3 - Carrinho
+0 - Sair
 
 
-# 1 - BUSCAR PRODUTOS
-# --------------------------------
-# Exibir lista de produtos disponíveis:
-#       1 - Caldo de cana                      x1   R$10,00
-#       2 - Bola de futebol americano          x9   R$0,05
-#       3 - Alicate de unha                    x384   R$156,00
-#
-# Selecionar produto: [número]
-#       0 - Voltar
-#
-# Após selecionar:
-#       - Digitar a quantidade desejada
-#       - Confirmar compra: [Sim / Não]
-#             -> Se "Sim": produto adicionado à lista
-#             -> Se "Não": volta para seleção de produto
-#
-# Exemplo após compra:
-#       1 - Caldo de cana                      x0   R$10,00
-#       2 - Bola de futebol americano          x9   R$0,05
-#       3 - Alicate de unha                    x384   R$156,00
-#
-# Criar lista personalizada:
-#       - while:
-#             -> "Qual item deseja adicionar à lista:" (ex: 1 32 3 7 68)
-#             -> "Deseja adicionar outro item?" (sim/não)
-#             -> "Finalizar lista" (encerra loop)
-# --------------------------------
+BUSCAR PRODUTOS
+- Mostra todos os produtos com:
+      numero, nome, estoque e preco
+- Usuario escolhe o produto pelo numero
+- Informa quantidade desejada
+- Se confirmado, adiciona ao carrinho e reduz estoque
 
 
-# 2 - AGENDAR SERVIÇOS
-# --------------------------------
-# (Acessível após login)
-# 1 - Tosa       (explicar o serviço)
-# 2 - Banho      (explicar o serviço)
-# 3 - Exame      (explicar o processo)
-# 4 - Adoção     (explicar o processo)
-# --------------------------------
+AGENDAR SERVICOS
+- Mostra lista de servicos:
+      1 - Tosa     R$xx
+      2 - Banho    R$xx
+      3 - Exame    R$xx
+- Usuario escolhe o servico
+- Servico e adicionado ao carrinho
 
 
-# 3 - COMPRAR PRODUTOS (dentro do menu logado)
-# --------------------------------
-# ----------- PRODUTOS DISPONÍVEIS ------------
-# 1 - BLA BLA BLA
-# 2 - Chevrolet Corsa
-# 3 - Toyota Hilux
-#
-# Selecionar produto(s): [ex: 2 3]
-#       - Aceitar apenas números
-#       - Se houver símbolos (: ; , .), desconsiderar
-#
-# Confirmar compra? [Sim / Não]
-#       -> Se "Sim":
-#             - Exibir lista dos produtos selecionados
-#             - Mostrar preço individual e valor total
-#       -> Se "Não":
-#             - Voltar à lista de produtos
-#
-# Caso entrada inválida (ex: 1223, aslsajdas, etc):
-#       -> Exibir: "Comando desconhecido"
-# --------------------------------
+CARRINHO
+- Mostra todos os itens adicionados (produtos e servicos)
+- Mostra o total da compra
+- Se confirmar pagamento:
+      -> Limpa o carrinho
+      -> Finaliza sessao
 
 
-# 4 - DEVOLUÇÃO (Opcional)
-# --------------------------------
-# O usuario pode solicitar devolução
-# O administrador é responsável por resolver
-# --------------------------------
+MENU ADMINISTRADOR
+LOGIN ADMIN:
+  email: admin@gmail.com
+  senha: admin
 
 
+MENU ADMIN
+1 - Usuarios
+2 - Produtos
+3 - Servicos
+0 - Sair
 
 
+ADMIN / USUARIOS
+1 - Adicionar usuario
+2 - Remover usuario
+3 - Listar usuarios
 
 
-
-# #---------Menu (ADMINISTRATIVO)-----------
-# 1 - Cadastro (admin)
-# 2 - Login (admin)
-# 0 - Sair
-
-#CADASTRO
-# 1 - nome:
-# 2 - email:
-# 3 - senha:
-# 4 - "key": 4 digitos
-
-#LOGIN
-# 1 - email:
-# 2 - senha:
-# 3 - "key": 4 digitos
-#
-#           ---Tela inicial (Admin)---
-            #1 - Gerenciar admins
-            #2 - gerenciar usuarios
-            #3 - controle de produtos
-            #4 - servicos
-            #0 - sair
-                #1 - Gerenciar Administradores
-                        #- cadastrar admin (nome, email, senha, chave de 4 digitos)
-                        #- listar administradores
-                        #- excluir administradores
+ADMIN / PRODUTOS
+1 - Adicionar produto
+2 - Remover produto
+3 - Atualizar estoque/preco
 
 
-                #2 - Gerenciar Usuários
-                        #- Listar todos os usuarios cadastrados
-                        #- Cadastrar usuario (adm ou cliente)
-                        #- buscar usuario por nome ou email
-                        #- bloquear usuario
-                        #- visualizar historico de compras do usuario (opcional)
+ADMIN / SERVICOS
+1 - Adicionar servico
+2 - Remover servico
+3 - Gerenciar datas
 
-                #3 - Controle de Produtos
-                        #- Adicinoar produto (nome, descrição, quantidade, valor)
-                        #- Editar produto (alterar nome, preço ou estoque)
-                        #- Remover produto
-                        #- Listar todos os produtos (mostrar em lista, nome, quantidade e preço)
-                        #- Buscar produto (por nome, preço sla)
 
-                #4 - Serviços
-                        #- Cadastrar serviço (nome, descriçao e preco)
-                        #- Editar serviço
-                        #- excluir servico
-                        #- listar todos os servicos
-                        #- visualizar agendamentos de servicos (cliente, data, tipo de servico sla)
-
-                #0 - Sair
-
+ESTRUTURAS UTILIZADAS
+usuarios = [[nome, email, senha]]
+produtos = [[nome, estoque, preco]]servicos = [[nome, preco]]
+datas_servicos = []
+carrinho = [[quantidade, nome_item, preco_total]]
