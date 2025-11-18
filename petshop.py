@@ -3,6 +3,8 @@
 #Dupla: Pedro Vyttor, Marcus Vinicius (periodo 1)
 #Linguagem: Python
 
+from validacoes import validarphoto
+
 usuarios = [['fulano','fulano@gmail.com','12345']]
 produtos = [['Petiscos de carne', 48, 15],['Bola de corda', 29, 12],['Escova de Pelo', 50, 22],['Casaco Pet Snoopy G', 16, 39],['Guia para Passeio', 61, 20]]
 servicos = [['Tosa', 50],['Banho', 30],['Exame', 70]]
@@ -57,7 +59,7 @@ while True:
                                 print('Usuario removido!')
                                 break
 
-                    elif op == '3':
+                    elif  op == '3':
                         print('\n--- USUARIOS CADASTRADOS ---')
                         if len(usuarios) == 0:
                             print('Nenhum usuario cadastrado.')
@@ -92,11 +94,11 @@ while True:
                     elif op == '3':
                         print('\n--- PRODUTOS CADASTRADOS ---')
                         for i in range(len(produtos)):
-                            print(i+1, '-', produtos[i][0], '| Estoque:', produtos[i][1], '| Preco: R$', produtos[i][2])
+                            print(i+1, '-', produtos[i] [0], '| Estoque:', produtos[i][1], '| Preco: R$', produtos[i] [2])
                         n = int(input('Numero do produto: '))
                         if n >= 1 and n <= len(produtos):
-                            produtos[n-1][1] = int(input('Novo estoque: '))
-                            produtos[n-1][2] = float(input('Novo preco: '))
+                            produtos[n-1] [1] = int(input('Novo estoque: '))
+                            produtos[n-1] [2] = float(input('Novo preco: '))
                             print('Produto atualizado!')
                         else:
                             print('Numero invalido.')
@@ -110,7 +112,7 @@ while True:
 
                     if op == '1':
                         nome = input('Nome: ')
-                        preco = float(input('Preco: '))
+                        preco = int(input('Preço: '))
                         servicos.append([nome, preco])
                         print('Servico adicionado!')
 
@@ -162,6 +164,7 @@ while True:
             print('Senha muito curta.')
         else:
             usuarios.append([nome, email, senha])
+
             print('Usuario cadastrado!')
 
     elif menu == '2':
@@ -193,7 +196,7 @@ while True:
                 carrinho = []
 
             elif opc == '1':
-                print('\n--- PRODUTOS DISPONIVEIS ---')
+                print('\n--- PRODUTOS DISPONIVWIS ---')
                 for i in range(len(produtos)):
                     print(i+1, '-', produtos[i][0], 'x', produtos[i][1], 'R$', produtos[i][2])
                 print('0 - Voltar')
@@ -206,7 +209,7 @@ while True:
                     if qtd <= produtos[n-1][1] and qtd > 0:
                         total = qtd * produtos[n-1][2]
                         print('Total: R$', total)
-                        c = input('Confirmar (s/n): ')
+                        c = input('Confirmar (s/n): ').lower()
                         if c == 's' or c == 'sim' or c == 'si' or c == 'yes' or c == 'y':
                             produtos[n-1][1] -= qtd
                             carrinho.append([qtd, produtos[n-1][0], total])
@@ -228,7 +231,7 @@ while True:
                 if n >= 1 and n <= len(servicos):
                     nome_servico = servicos[n-1][0]
                     preco_servico = servicos[n-1][1]
-                    carrinho.append([1, '\nServico: ' + nome_servico, preco_servico])
+                    carrinho.append([1, 'Servico: ' + nome_servico, preco_servico])
                     print('Servico agendado:', nome_servico)
                 else:
                     print('Numero invalido.')
@@ -243,8 +246,8 @@ while True:
                         print('-', item[0], 'x', item[1], 'R$', item[2])
                         total += item[2]
                     print('Total geral: R$', total)
-                    p = input('Pagar agora? (s/n): ')
-                    if p == 's':
+                    p = input('Pagar agora? (s/n): ').lower()
+                    if p == 's' or p == 'sim' or p == 'yes' or p == 'y':
                         carrinho = []
                         logado = False
                         print('Pagamento realizado. Obrigado!')
