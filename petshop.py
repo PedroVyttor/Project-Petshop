@@ -3,7 +3,7 @@
 #Dupla: Pedro Vyttor, Marcus Vinicius (periodo 1)
 #Linguagem: Python
 
-from validacoes import validarphoto
+from validacoes import validarphoto as vp
 
 usuarios = [['fulano','fulano@gmail.com','12345']]
 produtos = [['Petiscos de carne', 48, 15],['Bola de corda', 29, 12],['Escova de Pelo', 50, 22],['Casaco Pet Snoopy G', 16, 39],['Guia para Passeio', 61, 20]]
@@ -153,7 +153,7 @@ while True:
         break
 
     elif menu == '1':
-        print('\n--- CADASTRO DE USUARIP ---')
+        print('\n--- CADASTRO DE USUARIO ---')
         nome = input('Nome: ')
         email = input('Email: ')
         senha = input('Senha: ')
@@ -165,6 +165,7 @@ while True:
         else:
             usuarios.append([nome, email, senha])
 
+            vp.tirar_foto(0)   #foto
             print('Usuario cadastrado!')
 
     elif menu == '2':
