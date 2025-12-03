@@ -97,3 +97,10 @@ usuarios = [[nome, email, senha]]
 produtos = [[nome, estoque, preco]]servicos = [[nome, preco]]
 datas_servicos = []
 carrinho = [[quantidade, nome_item, preco_total]]
+
+PACOTES
+    opencv
+    pandas
+    schedule
+    django
+    PyPDF2
